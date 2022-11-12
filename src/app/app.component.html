@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="app.component.css">
+  </head>
+  
+  <body>
+
+    <!-- Navigation Bar-->
+    <div id="navigation_bar_main">
+      <fa-icon [icon]="faBell"></fa-icon>
+      <div id="navigation_bar_title">Shopping List</div>
+      <i class="fa-regular fa-bell" id="bell"></i>
+    </div>
+
+
+
+    <!--Thumb Buttons-->
+    <div id="thumb_buttons">
+      <div id="home_button">
+        <iconify-icon icon="cil:fridge" style="color: white;" width="46" id="thumb_icons" ></iconify-icon>
+        <div id="home_text">Home</div>
+      </div>
+      <div id="list_button">
+        <iconify-icon icon="fluent:clipboard-task-list-rtl-24-regular" style="color: white;" width="50" id="thumb_icons"></iconify-icon>
+        <div id="list_text">My List</div>
+      </div>
+      <div id="extras_button">
+        <iconify-icon icon="akar-icons:search" style="color: white;" width="49" id="thumb_icons"></iconify-icon>
+        <div id="extras_text">Extras</div>
+      </div>
+    </div>
+  </body>
+</html> 
+
+<router-outlet></router-outlet>
