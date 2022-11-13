@@ -1,5 +1,11 @@
-import { Component} from '@angular/core';
-import { faCoffee,faBell } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit} from '@angular/core';
+import { faCoffee,
+         faBell,
+         faUser,
+         faKitchenSet,
+         faClipboardList,
+         faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+
 
 
 
@@ -9,7 +15,19 @@ import { faCoffee,faBell } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
+
+  constructor(){}
+
+  public lem() {
+    console.log("roda t")
+  }
+
+
   title = 'Angular-app';
   faCoffee = faCoffee;
-  faBell = faBell
+  faBell = faBell;
+  faUser = faUser;
+  faKitchenSet = faKitchenSet;
+  faClipboardList = faClipboardList;
+  faMagnifyingGlass = faMagnifyingGlass;
 }

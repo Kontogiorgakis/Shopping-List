@@ -15,8 +15,8 @@
     position: absolute;
     width: 174px;
     height: 36px;
-    left: 105px;
-    top: 7px;
+    left: 101px;
+    top: 10px;
     font-family: 'Itim';
     font-style: normal;
     font-weight: 400;
@@ -33,7 +33,7 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    font-size: 1.8em;
+    font-size: 1.7em;
     left: 19px;
     top: 14px;
     color: #FFFFFF;
@@ -46,7 +46,7 @@
     right: 19px;
     top: 14px;
     bottom: 14px;
-    font-size: 1.8em;
+    font-size: 1.7em;
     color: #FFFFFF;   
 }
 
@@ -108,12 +108,18 @@
 }
 
 #thumb_icons{
-
     font-size: 40px;
     position: absolute;
-    left: 33px;
+    left: 37px;
     top: 13px;
-    bottom: 45px;
+    color: white;
+}
+
+#list{
+    font-size: 40px;
+    position: absolute;
+    left: 42px;
+    top: 13px;
     color: white;
 }
 
