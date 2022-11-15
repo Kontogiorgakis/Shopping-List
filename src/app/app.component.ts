@@ -1,12 +1,4 @@
-import { Component, OnInit} from '@angular/core';
-import { faCoffee,
-         faBell,
-         faUser,
-         faKitchenSet,
-         faClipboardList,
-         faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
-
-
+import { Component, OnInit, AfterViewInit} from '@angular/core';
 
 
 @Component({
@@ -14,20 +6,11 @@ import { faCoffee,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
-
+export class AppComponent implements OnInit, AfterViewInit {
+  //For Buttons
   constructor(){}
-
-  public lem() {
-    console.log("roda t")
-  }
-
-
+  ngOnInit(): void{}
+  ngAfterViewInit(): void {}
   title = 'Angular-app';
-  faCoffee = faCoffee;
-  faBell = faBell;
-  faUser = faUser;
-  faKitchenSet = faKitchenSet;
-  faClipboardList = faClipboardList;
-  faMagnifyingGlass = faMagnifyingGlass;
+
 }

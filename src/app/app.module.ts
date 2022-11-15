@@ -5,10 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ThumbButtonsComponent } from './components/thumb-buttons/thumb-buttons.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { InsideHomeComponent } from './pages/home/inside-home/inside-home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ThumbButtonsComponent,
+    TopBarComponent,
+    InsideHomeComponent,
   ],
   imports: [
     BrowserModule,
