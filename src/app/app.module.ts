@@ -8,6 +8,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ThumbButtonsComponent } from './components/thumb-buttons/thumb-buttons.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { InsideHomeComponent } from './pages/home/inside-home/inside-home.component';
+import { MeatsComponent } from './pages/home/meats/meats.component';
+import { UserSegmentComponent } from './user-segment/user-segment.component';
+import { ChickenSegmentComponent } from './pages/home/meats/chicken/chicken-segment/chicken-segment.component'
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { InsideHomeComponent } from './pages/home/inside-home/inside-home.compon
     ThumbButtonsComponent,
     TopBarComponent,
     InsideHomeComponent,
+    MeatsComponent,
+    UserSegmentComponent,
+    ChickenSegmentComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +31,7 @@ import { InsideHomeComponent } from './pages/home/inside-home/inside-home.compon
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
-  ]
+  ],
+  exports: [MeatsComponent]
 })
 export class AppModule { }

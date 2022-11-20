@@ -112,10 +112,12 @@
 #categories{
     position: absolute;
     width: 319px;
-    height: 1100px;
+    height:414px;
     left: 28px;
     top: 237px;
     background: #ffff;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #up_sharp{
@@ -136,12 +138,23 @@
     border-radius: 5px 30px;
 }
 
+#image{
+    position: relative;
+    width: 105px;
+    height: 83px;
+    left: 10px;
+    top: 10px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+}
+
 #category_title{
-    position: absolute;
+    position: relative;
     width: 150px;
     height: 30px;
     left: 135px;
-    top: 40px;
+    top: -60px;
 
     font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
@@ -157,11 +170,11 @@
 }
 
 #category_sub{
-    position: absolute;
+    position: relative;
     width: 150px;
     height: 19px;
     left: 135px;
-    top: 75px;
+    top: -55px;
 
     font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;

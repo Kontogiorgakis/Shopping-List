@@ -4,6 +4,7 @@ import {faKitchenSet,
         faBath,
         faMagnifyingGlass,
         faChevronRight} from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inside-home',
@@ -12,9 +13,13 @@ import {faKitchenSet,
 })
 export class InsideHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  public redirect(){
+    this.router.navigateByUrl('/home/meats')
   }
 
   faKitchenSet = faKitchenSet;
