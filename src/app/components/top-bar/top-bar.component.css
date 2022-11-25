@@ -11,11 +11,10 @@
 /*navigation bar title*/
 #navigation_bar_title{
     position: absolute;
-    width: 174px;
     height: 36px;
     left: 101px;
     top: 10px;
-    font-family: 'Itim';
+    font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 30px;

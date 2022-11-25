@@ -1,0 +1,55 @@
+<!--Add an Item-->
+<div id="adding">
+    <div id="add_text">Add Item</div>
+
+    <!--Kind of Item-->
+    <div id="kind">
+        <div id="edible">Edible</div>
+        <div id="potable">Potable</div>
+        <div id="other">Other</div>
+    </div>
+
+    <!--informations-->
+    <div id="informations">
+        <div id="namerow">
+            <div id="name">Name:</div>
+            <input type="text" id="search_bar" placeholder="Name"> 
+        </div>
+        
+        <div id="dashes"></div>
+
+        <div id="quantity">
+            <div id="quantity_text">Quantity:</div>
+            <fa-icon [icon]="faCircle" id="dot"></fa-icon>
+            <fa-icon [icon]="faCircle" id="dot" style="top:95px;"></fa-icon>
+            <div id="kilograms">Kilograms:</div>
+            <div id="pieces">Pieces:</div>
+
+            <!--numberinput for KILOGRAMS-->
+            <div class="number">
+                <span class="minus" style="line-height: 16px;">-</span>
+                <input type="text" value="1.360" id="kiloinput"/>
+                <span class="plus">+</span>
+            </div>
+
+            <!--numberinput for pieces-->
+            <div class="number" style="top:82px">
+                <span class="minus" style="line-height: 16px;">-</span>
+                <input type="text" value="5" id="kiloinput"/>
+                <span class="plus">+</span>
+            </div>
+        </div>
+
+        <div id="dashes" style="top:355px"></div>
+        <!--Price and Status-->
+        <div id="price_status">
+            <div id="approx">Price Approx: <fa-icon [icon]="faMinus" id="line"></fa-icon></div>
+            <div id="from">Buy from:</div>
+            <div id="status">Status:</div>
+        </div>
+
+    </div>
+
+
+
+</div>

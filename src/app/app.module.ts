@@ -9,8 +9,10 @@ import { ThumbButtonsComponent } from './components/thumb-buttons/thumb-buttons.
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { InsideHomeComponent } from './pages/home/inside-home/inside-home.component';
 import { MeatsComponent } from './pages/home/meats/meats.component';
-import { UserSegmentComponent } from './user-segment/user-segment.component';
-import { ChickenSegmentComponent } from './pages/home/meats/chicken/chicken-segment/chicken-segment.component'
+import { ChickenSegmentComponent } from './pages/home/meats/chicken/chicken-segment/chicken-segment.component';
+import { ListComponent } from './pages/list/list.component';
+import { AddComponent } from './pages/list/add/add.component';
+
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { ChickenSegmentComponent } from './pages/home/meats/chicken/chicken-segm
     TopBarComponent,
     InsideHomeComponent,
     MeatsComponent,
-    UserSegmentComponent,
     ChickenSegmentComponent,
+    ListComponent,
+    AddComponent,
   ],
   imports: [
     BrowserModule,

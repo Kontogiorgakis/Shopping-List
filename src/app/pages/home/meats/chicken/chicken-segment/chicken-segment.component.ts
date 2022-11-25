@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MeatsComponent } from '../../meats.component';
+import { faHeart,faCircleXmark} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-chicken-segment',
@@ -13,4 +13,10 @@ export class ChickenSegmentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public counter(){
+    console.log("NTOOUT")
+  }
+
+  faHeart = faHeart;
+  faCircleXmark = faCircleXmark;
 }
