@@ -61,7 +61,6 @@ export class ListComponent implements OnInit {
   }
 
   public selected(type: string){
-    console.log("eee")
     if(type==="all"){
       this.all=true; 
       this.bought=false;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faHeart,faCircleXmark} from '@fortawesome/free-solid-svg-icons';
-
+import { faHeart, faXmark} from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-chicken-segment',
   templateUrl: './chicken-segment.component.html',
@@ -8,7 +8,7 @@ import { faHeart,faCircleXmark} from '@fortawesome/free-solid-svg-icons';
 })
 export class ChickenSegmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -17,6 +17,10 @@ export class ChickenSegmentComponent implements OnInit {
     console.log("NTOOUT")
   }
 
+  public redirect(){
+    this.router.navigateByUrl('/home/meats')
+  }
+
   faHeart = faHeart;
-  faCircleXmark = faCircleXmark;
+  faXmark = faXmark
 }

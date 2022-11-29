@@ -12,7 +12,10 @@ import { MeatsComponent } from './pages/home/meats/meats.component';
 import { ChickenSegmentComponent } from './pages/home/meats/chicken/chicken-segment/chicken-segment.component';
 import { ListComponent } from './pages/list/list.component';
 import { AddComponent } from './pages/list/add/add.component';
-
+import { ExtrasComponent } from './pages/extras/extras.component';
+import { UserSegmentComponent } from './components/user-segment/user-segment.component';
+import { RecipeComponent } from './pages/extras/recipe/recipe.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,10 @@ import { AddComponent } from './pages/list/add/add.component';
     ChickenSegmentComponent,
     ListComponent,
     AddComponent,
+    ExtrasComponent,
+    UserSegmentComponent,
+    RecipeComponent,
+    NotificationsComponent,
   ],
   imports: [
     BrowserModule,

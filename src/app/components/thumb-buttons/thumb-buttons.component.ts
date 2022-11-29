@@ -52,6 +52,8 @@ export class ThumbButtonsComponent implements OnInit, AfterViewInit {
 
     this.toggler(this.extra_button)
     this.unToggler(this.home_button,this.list_button)
+
+    this.router.navigateByUrl('/extras')
   }
 
   public toggler(where: ElementRef){

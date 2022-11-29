@@ -10,6 +10,7 @@
 
 /*navigation bar title*/
 #navigation_bar_title{
+    cursor: pointer;
     position: absolute;
     height: 36px;
     left: 101px;

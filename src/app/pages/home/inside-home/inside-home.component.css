@@ -18,23 +18,48 @@
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
+#fridge{
+    object-fit:fill;
+    width: 80px;
+    margin-top: 16px;
+    margin-left: 15px;
+}
+
 #kitchen{
+    background-color: #bd9999;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 20px;
     width: 114px;
     height: 112px;
     float: left;
 }
 
 #cupboard{
-    margin-left: 1.5px;
+    border-radius: 20px;
+    margin-left: 7px;
     width: 114px;
     height: 112px;
     float: left;
 }
 
+#cabinet{
+    object-fit:fill;
+    width: 70px;
+    margin-top: 27px;
+    margin-left: 25px;
+}
+
 #bathroom{
+    border-radius: 20px;
     width: 114px;
     height: 112px;
     float: right;
+}
+
+#bath{
+    width: 80px;
+    margin-top: 16px;
+    margin-left: 15px;
 }
 
 #icon{

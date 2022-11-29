@@ -3,6 +3,7 @@ import {
          faBell,
          faUser
         } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,9 +13,24 @@ import {
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() {}
+  toggleUser:boolean = false;
+  toggleNotifications:boolean=false;
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
+  }
+
+  public goToList(){
+    this.router.navigateByUrl('/')
+  }
+
+  public user(){
+    this.toggleUser=!this.toggleUser;
+  }
+
+  public notifications(){
+    this.toggleNotifications=!this.toggleNotifications
   }
 
   title = 'Angular-app';
