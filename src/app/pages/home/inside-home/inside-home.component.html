@@ -3,77 +3,22 @@
 
     <!--Slider-->
     <div id="places_slider">
-        <div id="kitchen">
+        <div id="kitchen" (click)="fridge()" [ngStyle]="{'background-color': activeTab==='fridge'?'#bd9999':'transparent','box-shadow':activeTab==='fridge'?'0 3px 10px rgb(0 0 0 / 0.2)':'none'}">
             <img src="../../../../assets/status/fridge.svg" id="fridge">
         </div>
-        <div id="cupboard">
-            <img src="../../../../assets/status/cupboard.svg" id="cabinet">
+        <div id="cupboard" (click)="cupboard()" [ngStyle]="{'background-color': activeTab==='cupboard'?'#bd9999':'transparent','box-shadow':activeTab==='cupboard'?'0 3px 10px rgb(0 0 0 / 0.2)':'none'}">
+            <img src="../../../../assets/status/cupboard.svg" id="cabinet" >
         </div>
-        <div id="bathroom">
+        <div id="bathroom" (click)="bathroom()" [ngStyle]="{'background-color': activeTab==='bathroom'?'#bd9999':'transparent','box-shadow':activeTab==='bathroom'?'0 3px 10px rgb(0 0 0 / 0.2)':'none'}">
             <img src="../../../../assets/status/bathroom.svg" id="bath">
         </div>
     </div>
 
-    <!--Search-->
-    <div id="search">
-        <input type="text" id="search_bar" placeholder="Search"> 
-        <fa-icon [icon]="faMagnifyingGlass" id="magnigying_glass"></fa-icon>
-        <fa-icon [icon]="faChevronRight" id="right"></fa-icon>
-    </div>
 
-    <!--Categories-->
-    <div id="categories">
-        <div id="up_sharp" (click)="redirect();">
-            <img src="../../../../assets/meats.jpg" id="image">
-            <div id="category_title">Meats</div>
-            <div id="category_sub">9 categories</div>
-        </div>
-        <div id="down_sharp">
-            <img src="../../../../assets/vegetables.jpg" id="image">
-            <div id="category_title">Vegetables</div>
-            <div id="category_sub">7 categories</div>
-        </div>
-        <div id="up_sharp">
-            <img src="../../../../assets/dairy.jpg" id="image">
-            <div id="category_title">Dairy</div>
-            <div id="category_sub">9 categories</div>
-        </div>
-        <div id="down_sharp">
-            <img src="../../../../assets/fruits.jpg" id="image">
-            <div id="category_title">Fruits</div>
-            <div id="category_sub">9 categories</div>
-        </div>
-        <div id="up_sharp">
-            <img src="../../../../assets/soda.jpg" id="image">
-            <div id="category_title">Soda</div>
-            <div id="category_sub">9 categories</div>
-        </div>
-        <div id="down_sharp">
-            <img src="../../../../assets/frozen.jpg" id="image">
-            <div id="category_title">Frozen</div>
-            <div id="category_sub">9 categories</div>
-        </div>
-        <div id="up_sharp">
-            <img src="../../../../assets/bakery.jpg" id="image">
-            <div id="category_title">Bakery</div>
-            <div id="category_sub">9 categories</div></div>
-        <div id="down_sharp">
-            <img src="../../../../assets/sweets.jpeg" id="image">
-            <div id="category_title">Sweets</div>
-            <div id="category_sub">9 categories</div></div>
-        <div id="up_sharp">
-            <img src="../../../../assets/cold_cuts.png" id="image">
-            <div id="category_title">Cold Cuts</div>
-            <div id="category_sub">9 categories</div></div>
-        <div id="down_sharp">
-            <img src="../../../../assets/eggs.jpg" id="image">
-            <div id="category_title">Eggs</div>
-            <div id="category_sub">9 categories</div></div>
-        <div id="up_sharp">
-            <img src="../../../../assets/juices.jpg" id="image">
-            <div id="category_title">Juices</div>
-            <div id="category_sub">9 categories</div></div>
-    </div>
+
+    <app-fridge *ngIf="activeTab==='fridge'"></app-fridge>
+    <app-cupboard *ngIf="activeTab==='cupboard'"></app-cupboard>
+    <app-bathroom *ngIf="activeTab==='bathroom'"></app-bathroom>
     
 
 </div>

@@ -3,7 +3,8 @@ import { faKitchenSet,
          faClipboardList,
          faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-thumb-buttons',
@@ -13,7 +14,22 @@ import { Router } from '@angular/router';
 export class ThumbButtonsComponent implements OnInit, AfterViewInit {
 
   //For Buttons
-  constructor(private router: Router){}
+  constructor(private router: Router){
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+  ).subscribe(() => {
+    if(this.router.url==="/" || this.router.url.split('?')[0]==="/add"){
+      this.toggler(this.list_button)
+      this.unToggler(this.home_button,this.extra_button)
+    }else if(this.router.url.split('?')[0]==="/home"){
+      this.toggler(this.home_button)
+      this.unToggler(this.extra_button,this.list_button)
+    }else if(this.router.url==="/extras"){
+      this.toggler(this.extra_button)
+      this.unToggler(this.home_button,this.list_button)
+    }
+  });
+  }
   
   //My home div
   @ViewChild('home_button') home_button!:ElementRef;
@@ -28,17 +44,15 @@ export class ThumbButtonsComponent implements OnInit, AfterViewInit {
   
   //toggle highlighting and change screen HOME
   public homeToggle() {
-    console.log("HOME")
     //Change the colors inside div
     this.toggler(this.home_button)
     this.unToggler(this.list_button,this.extra_button)
     
-    this.router.navigateByUrl('/home')
+    this.router.navigateByUrl('/home?tab=fridge')
   }
 
   //toggle highlighting and change screen LIST
   public listToggle() {
-    console.log("LIST")
 
     this.toggler(this.list_button)
     this.unToggler(this.home_button,this.extra_button)
@@ -48,7 +62,6 @@ export class ThumbButtonsComponent implements OnInit, AfterViewInit {
 
   //toggle highlighting and change screen EXTRAS
   public extrasToggle() {
-    console.log("EXTRAS")
 
     this.toggler(this.extra_button)
     this.unToggler(this.home_button,this.list_button)

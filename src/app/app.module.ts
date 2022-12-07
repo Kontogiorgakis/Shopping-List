@@ -16,6 +16,12 @@ import { ExtrasComponent } from './pages/extras/extras.component';
 import { UserSegmentComponent } from './components/user-segment/user-segment.component';
 import { RecipeComponent } from './pages/extras/recipe/recipe.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { FridgeComponent } from './pages/home/inside-home/fridge/fridge.component';
+import { CupboardComponent } from './pages/home/inside-home/cupboard/cupboard.component';
+import { BathroomComponent } from './pages/home/inside-home/bathroom/bathroom.component';
+import { FavoriteComponent } from './pages/favorite/favorite.component';
+import { SnacksComponent } from './pages/home/inside-home/cupboard/snacks/snacks.component';
+import { SpicesComponent } from './pages/home/inside-home/cupboard/spices/spices.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +37,12 @@ import { NotificationsComponent } from './components/notifications/notifications
     UserSegmentComponent,
     RecipeComponent,
     NotificationsComponent,
+    FridgeComponent,
+    CupboardComponent,
+    BathroomComponent,
+    FavoriteComponent,
+    SnacksComponent,
+    SpicesComponent,
   ],
   imports: [
     BrowserModule,

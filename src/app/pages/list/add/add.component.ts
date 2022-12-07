@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faCircle, faMinus, faChevronRight} from '@fortawesome/free-solid-svg-icons';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -8,9 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css']
 })
-export class AddComponent implements OnInit {
-
-  
+export class AddComponent implements OnInit {  
   //Divs
   name:boolean = true;
   quantity:boolean = false;
@@ -19,10 +19,33 @@ export class AddComponent implements OnInit {
 
   //Buy from
   show:boolean = false;
+
+  //Tab manipulation
+  //Active Tab
+  activeTab=""
+
+  //filter
+  filter$: Observable<string> | undefined;
   
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.filter$ = this.route.queryParamMap.pipe(
+      map((params: ParamMap) => params.get('tab')||""),
+    );
+
+    // subscribe and log the params when they change
+    // you could set to an internal variable or
+    // bind the filter$ directly to the async pipe
+    // ultimatecourses.com/blog/angular-ngfor-async-pipe
+    this.filter$.subscribe(param =>{
+      if(param===null)
+        return
+      /*Here we manipulate the params*/
+      if(param!==""){
+        document.getElementById('search_bar')?.setAttribute("value",param)
+      }
+    });
   }
 
   public showStores(){

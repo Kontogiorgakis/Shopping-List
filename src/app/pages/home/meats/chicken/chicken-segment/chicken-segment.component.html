@@ -12,7 +12,7 @@
         <div id="item_text">Whole</div>
         <div id="counter">Counter:<input type="text" id="cnt_input" value="3">kg</div>
         <div id="minimum_value">Minimum value:<input type="text" id="cnt_input" value="2" pattern="\d{2}:\d{2}" required contenteditable ></div>
-        <div id="add">
+        <div id="add" (click)="addItem(0)">
             <div id="add_text">Add</div>
         </div>
         <fa-icon [icon]="faHeart" id="heart"></fa-icon>
@@ -27,7 +27,7 @@
 
         <div id="counter">Counter:<a>1.360</a>kg</div>
         <div id="minimum_value">Minimum value:<a style="font-weight: 600 ;">1.300</a></div>
-        <div id="add">
+        <div id="add" (click)="addItem(1)">
             <div id="add_text">Add</div>
         </div>
         <fa-icon [icon]="faHeart" id="heart"></fa-icon>
@@ -38,7 +38,7 @@
         <div id="item_text">Drums</div>
         <div id="counter">Counter:<a>0.500</a>kg</div>
         <div id="minimum_value">Minimum value:<a style="font-weight: 600 ;">1.000</a></div>
-        <div id="add" [routerLink]="['/']">
+        <div id="add" (click)="addItem(2)">
             <div id="add_text">Add</div>
         </div>
         <fa-icon [icon]="faHeart" id="heart" style="color:#c71313"></fa-icon>
@@ -53,7 +53,7 @@
 
         <div id="counter">Counter:<a>0.300</a>kg</div>
         <div id="minimum_value">Minimum value:<a>0.332</a></div>
-        <div id="add">
+        <div id="add" (click)="addItem(3)">
             <div id="add_text">Add</div>
         </div>
         <fa-icon [icon]="faHeart" id="heart"></fa-icon>
@@ -64,8 +64,8 @@
         <div id="item_text">Legs</div>
         <div id="counter">Counter:<a>2.000</a>kg</div>
         <div id="minimum_value">Minimum value:<a>1.000</a></div>
-        <div id="add">
-            <div id="add_text">Add</div>
+        <div id="add" (click)="addItem(4)">
+            <div id="add_text" >Add</div>
         </div>
         <fa-icon [icon]="faHeart" id="heart" style="color:#c71313"></fa-icon>
 
@@ -75,7 +75,7 @@
         <div id="item_text">Wings</div>
         <div id="counter">Counter:<a>1.800</a>kg</div>
         <div id="minimum_value">Minimum value:<a>0.900</a></div>
-        <div id="add">
+        <div id="add" (click)="addItem(5)">
             <div id="add_text">Add</div>
         </div>
         <fa-icon [icon]="faHeart" id="heart"></fa-icon>

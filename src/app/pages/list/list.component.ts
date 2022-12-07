@@ -48,7 +48,6 @@ export class ListComponent implements OnInit {
 
 
   public toggle(){
-    
     if(this.infos){
       this.down=true;
       this.up=false;    

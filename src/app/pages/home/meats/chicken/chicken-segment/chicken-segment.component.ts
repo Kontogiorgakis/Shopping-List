@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
 })
 export class ChickenSegmentComponent implements OnInit {
 
+  //array of items
+  items = ["Whole","Breasts","Drums","Thighs","Legs","Wings"] 
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -15,6 +18,10 @@ export class ChickenSegmentComponent implements OnInit {
 
   public counter(){
     console.log("NTOOUT")
+  }
+
+  public addItem(num: number){
+    this.router.navigateByUrl('/add?tab='+this.items[num]+'')
   }
 
   public redirect(){
