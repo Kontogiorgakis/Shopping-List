@@ -26,6 +26,7 @@ export class CupboardComponent implements OnInit {
   }
 
   public snacksRedirect(){
+    document.getElementById('categories')?.setAttribute("style","filter: blur(1px);")
     this.snacks=true
   }
 

@@ -15,7 +15,7 @@ import { ListComponent } from './pages/list/list.component';
 
 
 const routes: Routes = [
-  {path: '', component:InsideHomeComponent},
+  {path: '', component:ListComponent},
   {path: 'user', component:UserSegmentComponent},
   {path: 'favorite', component:FavoriteComponent},
   {path: 'notifications', component:NotificationsComponent},

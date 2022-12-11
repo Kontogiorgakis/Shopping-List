@@ -3,11 +3,11 @@ import { faHeart, faXmark} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-spices',
-  templateUrl: './spices.component.html',
-  styleUrls: ['./spices.component.css']
+  selector: 'app-oral',
+  templateUrl: './oral.component.html',
+  styleUrls: ['./oral.component.css']
 })
-export class SpicesComponent implements OnInit {
+export class OralComponent implements OnInit {
   //array of items
   items = ["Chips","Pop Corn","Biscuits","Snack Bars","Crackers"] 
 
@@ -25,8 +25,7 @@ export class SpicesComponent implements OnInit {
   }
 
   public redirect(){
-    console.log("awewq")
-    this.router.navigateByUrl('/home')
+    this.router.navigateByUrl('/home?tab=cupboard')
   }
 
   faHeart = faHeart;

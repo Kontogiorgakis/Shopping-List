@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
   templateUrl: './snacks.component.html',
   styleUrls: ['./snacks.component.css']
 })
+
 export class SnacksComponent implements OnInit {
+
 
   //array of items
   items = ["Chips","Pop Corn","Biscuits","Snack Bars","Crackers"] 
@@ -26,8 +28,7 @@ export class SnacksComponent implements OnInit {
   }
 
   public redirect(){
-    console.log("awewq")
-    this.router.navigateByUrl('/home')
+    this.router.navigateByUrl('/home?tab=cupboard')
   }
 
   faHeart = faHeart;

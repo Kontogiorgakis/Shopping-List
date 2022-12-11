@@ -21,7 +21,7 @@ import { CupboardComponent } from './pages/home/inside-home/cupboard/cupboard.co
 import { BathroomComponent } from './pages/home/inside-home/bathroom/bathroom.component';
 import { FavoriteComponent } from './pages/favorite/favorite.component';
 import { SnacksComponent } from './pages/home/inside-home/cupboard/snacks/snacks.component';
-import { SpicesComponent } from './pages/home/inside-home/cupboard/spices/spices.component';
+import { OralComponent } from './pages/home/inside-home/bathroom/oral/oral.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { SpicesComponent } from './pages/home/inside-home/cupboard/spices/spices
     BathroomComponent,
     FavoriteComponent,
     SnacksComponent,
-    SpicesComponent,
+    OralComponent,
   ],
   imports: [
     BrowserModule,
