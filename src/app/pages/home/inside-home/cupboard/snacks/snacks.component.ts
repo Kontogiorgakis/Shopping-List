@@ -12,7 +12,7 @@ export class SnacksComponent implements OnInit {
 
 
   //array of items
-  items = ["Chips","Pop Corn","Biscuits","Snack Bars","Crackers"] 
+  items = ["Chips","Pop Corn","Biscuits","Snack Bars","Crackers"]
 
   constructor(private router: Router) { }
 

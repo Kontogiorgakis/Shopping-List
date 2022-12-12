@@ -30,24 +30,24 @@ export class ThumbButtonsComponent implements OnInit, AfterViewInit {
     }
   });
   }
-  
+
   //My home div
   @ViewChild('home_button') home_button!:ElementRef;
   @ViewChild('list_button') list_button!:ElementRef;
   @ViewChild('extra_button') extra_button!:ElementRef;
-  
+
   ngOnInit(): void{}
   ngAfterViewInit(): void {
     //initialize with list first
-    this.listToggle()
+    //this.listToggle()
   }
-  
+
   //toggle highlighting and change screen HOME
   public homeToggle() {
     //Change the colors inside div
     this.toggler(this.home_button)
     this.unToggler(this.list_button,this.extra_button)
-    
+
     this.router.navigateByUrl('/home?tab=fridge')
   }
 
@@ -56,7 +56,7 @@ export class ThumbButtonsComponent implements OnInit, AfterViewInit {
 
     this.toggler(this.list_button)
     this.unToggler(this.home_button,this.extra_button)
-    
+
     this.router.navigateByUrl('/')
   }
 

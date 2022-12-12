@@ -22,6 +22,15 @@ import { BathroomComponent } from './pages/home/inside-home/bathroom/bathroom.co
 import { FavoriteComponent } from './pages/favorite/favorite.component';
 import { SnacksComponent } from './pages/home/inside-home/cupboard/snacks/snacks.component';
 import { OralComponent } from './pages/home/inside-home/bathroom/oral/oral.component';
+import { FridgePanelComponent } from './places/fridge-panel/fridge-panel.component';
+import { FridgeTopbarComponent } from './places/fridge-panel/fridge-topbar/fridge-topbar.component';
+import { PendingItemsComponent } from './places/fridge-panel/fridge-topbar/pending-items/pending-items.component';
+import { FridgeMeatsComponent } from './places/fridge-panel/fridge-meats/fridge-meats.component';
+import { FridgeChickenComponent } from './places/fridge-panel/fridge-meats/fridge-chicken/fridge-chicken.component';
+import { FridgeLikeComponent } from './places/fridge-panel/fridge-like/fridge-like.component';
+import { FridgeSodaComponent } from './places/fridge-panel/fridge-soda/fridge-soda.component';
+import { FridgeFruitsComponent } from './places/fridge-panel/fridge-fruits/fridge-fruits.component';
+import { FridgeTropicalComponent } from './places/fridge-panel/fridge-fruits/fridge-tropical/fridge-tropical.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +52,15 @@ import { OralComponent } from './pages/home/inside-home/bathroom/oral/oral.compo
     FavoriteComponent,
     SnacksComponent,
     OralComponent,
+    FridgePanelComponent,
+    FridgeTopbarComponent,
+    PendingItemsComponent,
+    FridgeMeatsComponent,
+    FridgeChickenComponent,
+    FridgeLikeComponent,
+    FridgeSodaComponent,
+    FridgeFruitsComponent,
+    FridgeTropicalComponent
   ],
   imports: [
     BrowserModule,
