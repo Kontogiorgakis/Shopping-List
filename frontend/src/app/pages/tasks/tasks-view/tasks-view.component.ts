@@ -12,6 +12,9 @@ export class TasksViewComponent implements OnInit {
   public tasks: TaskModel[] = [];
   public title: string = '';
   public description: string = '';
+  public color: string = '';
+
+
   constructor(
     private tasksService: TasksService,
     private socketService: SocketsService
@@ -38,12 +41,16 @@ export class TasksViewComponent implements OnInit {
     // this--> const task = new TaskModel({ title: this.title, description: this.description });
     const task = new TaskModel();
     // or that -->
-    task.title = this.title;
-    task.description = this.description;
+    //task.title = this.title;
+    //task.description = this.description;
+    //task.color = this.color;
+    //console.log(task.color);
+    //testing
 
     this.tasksService.create(task).subscribe((result) => {
       this.title = '';
       this.description = '';
+      this.color = '';
       this.socketService.publish("tasks_update", task);
     });
   }

@@ -5,16 +5,23 @@ import { DefaultSchemaOptions } from '../../../models/shared';
 // ------------------------------------------
 // Interface declaration
 export interface ITask extends Document {
-  title: string;
-  description: string;
+  type: string;
+  name: string;
+  quantity: string;
+  price: string;
+  place: string;
+  status: string;
 }
 
 // ------------------------------------------
 // Schema definition
 const taskSchema = new Schema(
   {
-    title: { type: String, required: true },
-    description: { type: String, required: true },
+    type: { type: String, required: true },
+    name: { type: String, required: true },
+    quantity: {type: String, required: true},
+    price: {type: String, required: true},
+    status: {type: String, required: true},
   },
   { ...DefaultSchemaOptions }
 );

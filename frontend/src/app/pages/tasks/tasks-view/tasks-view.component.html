@@ -3,12 +3,15 @@
     <div class="task-container px-3 pt-3 pb-3 mt-1" *ngFor="let task of tasks">
       <div class="d-flex justify-content-between">
         <h4 class="content mb-3">
-          {{ task.title }}
+
         </h4>
         <i class="fa fa-window-close pointer-cursor delete-task" (click)=" deleteTask(task)"></i>
       </div>
       <div class="mb-3">
-        {{ task.description }}
+
+      </div>
+      <div class="mb-3"> Color:
+
       </div>
       <div class="creation-date text-muted">
         <i>created at: {{ task.createdAt }}</i>
@@ -27,6 +30,10 @@
           Description:
         </label>
         <input class="form-control mt-1" id="taskDescriptionInput" [(ngModel)]="description" name="inputdescription" />
+        <label for="nigerDicker">
+          Color:
+        </label>
+        <input class="form-control mt-1" id="color" [(ngModel)]="color" name="inputcolor" />
         <div class="task-btn mt-1">
           <button type="submit" class="btn btn-primary pull-right">
             Send

@@ -31,7 +31,7 @@ export class ItemShopController extends ResourceController<IItem>{
     /**
      * Sends a message containing all tasks back as a response
      * @param req
-     * @param res 
+     * @param res
      */
     getItems = async (req: Request, res: Response) => {
         this.logger.debug('getItems request');
@@ -57,11 +57,12 @@ export class ItemShopController extends ResourceController<IItem>{
 
     /**
      * Delete task by id
-     * @param req 
-     * @param res 
+     * @param req
+     * @param res
      */
     deleteItem = async (req: Request, res: Response) => {
         this.logger.debug('deleteItem request');
+        console.log(req.params.id);
         const task = await this.delete(req.params.id, req, res);
         return res
             .status(StatusCodes.OK)
@@ -71,8 +72,8 @@ export class ItemShopController extends ResourceController<IItem>{
 
     /**
      * Update task by id
-     * @param req 
-     * @param res 
+     * @param req
+     * @param res
      */
     updateItem = async (req: Request, res: Response) => {
         this.logger.debug('updateItem request');
@@ -84,8 +85,8 @@ export class ItemShopController extends ResourceController<IItem>{
 
     /**
      * Get single task by id
-     * @param req 
-     * @param res 
+     * @param req
+     * @param res
      */
     getItemById = async (req: Request, res: Response) => {
         this.logger.debug('getItemById request');
@@ -97,8 +98,8 @@ export class ItemShopController extends ResourceController<IItem>{
 
     /**
      * Initialize items
-     * @param req 
-     * @param res 
+     * @param req
+     * @param res
      */
     initializeItems = async (req: Request, res: Response) => {
         this.logger.debug('initialize items request');

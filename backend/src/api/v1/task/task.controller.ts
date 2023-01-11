@@ -33,7 +33,7 @@ export class TaskController extends ResourceController<ITask>{
     /**
      * Sends a message containing all tasks back as a response
      * @param req
-     * @param res 
+     * @param res
      */
     getTasks = async (req: Request, res: Response) => {
         this.logger.debug('getTasks request');
@@ -63,8 +63,8 @@ export class TaskController extends ResourceController<ITask>{
 
     /**
      * Delete task by id
-     * @param req 
-     * @param res 
+     * @param req
+     * @param res
      */
     deleteTask = async (req: Request, res: Response) => {
         this.logger.debug('deleteTask request');
@@ -79,8 +79,8 @@ export class TaskController extends ResourceController<ITask>{
 
     /**
      * Update task by id
-     * @param req 
-     * @param res 
+     * @param req
+     * @param res
      */
     updateTask = async (req: Request, res: Response) => {
         this.logger.debug('updateTask request');
@@ -94,8 +94,8 @@ export class TaskController extends ResourceController<ITask>{
 
     /**
      * Get single task by id
-     * @param req 
-     * @param res 
+     * @param req
+     * @param res
      */
     getTaskById = async (req: Request, res: Response) => {
         this.logger.debug('getTaskById request');
