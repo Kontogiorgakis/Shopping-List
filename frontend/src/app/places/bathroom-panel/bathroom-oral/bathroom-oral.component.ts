@@ -7,6 +7,7 @@ import { SocketsService } from 'src/app/global/services/sockets/sockets.service'
 import { ProductModel } from 'src/app/global/models/product/product.model';
 import { NotificationsService } from 'src/app/global/services/tasks/notifications.service';
 import { NotificationModel } from 'src/app/global/models/notifications/notifications.model';
+import { SmartSpeakerService } from 'src/app/global/services/voice/smart-speaker.service';
 
 
 @Component({
@@ -31,12 +32,19 @@ export class BathroomOralComponent implements OnInit {
   //toggle Color
   color:{[key: number]: boolean} = {};
 
-  constructor(private router: Router,private productService: ProductService,private notificationService: NotificationsService,private socketService: SocketsService) {}
+  constructor(private router: Router,private productService: ProductService,private notificationService: NotificationsService,private socketService: SocketsService,private smartSpeaker: SmartSpeakerService ) {}
 
   ngOnInit(): void {
     document.getElementById('topbar')?.setAttribute("style","pointer-events:none")
     this.getAllTasks();
+
+    this.smartSpeaker.initialize();
+    this.smartSpeaker.start();
+    /*ADD COMMANDS FOR BACKEND*/
+    this.smartSpeaker.addCommand('like toothbrush',()=>{
+    })
   }
+
 
   private getAllTasks(): void {
     this.productService.getAll().subscribe((result) => {

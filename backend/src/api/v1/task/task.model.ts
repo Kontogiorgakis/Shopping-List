@@ -8,6 +8,7 @@ export interface ITask extends Document {
   type: string;
   name: string;
   quantity: string;
+  store: string;
   price: string;
   place: string;
   status: string;
@@ -19,6 +20,7 @@ const taskSchema = new Schema(
   {
     type: { type: String, required: true },
     name: { type: String, required: true },
+    store: { type: String, required: true },
     quantity: {type: String, required: true},
     price: {type: String, required: true},
     status: {type: String, required: true},

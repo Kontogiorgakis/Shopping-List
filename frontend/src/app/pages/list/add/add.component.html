@@ -1,29 +1,13 @@
 <!--Add an Item-->
 <!--Stores-->
 <div id="showing" *ngIf="show">
-    <div id="market">
+    <div id="market" (click)="emptyness()">
         <div id="marketName" style="font-size:24px; color:black">Any</div>
         <fa-icon [icon]="faMinus" id="empty"></fa-icon>
     </div>
-    <div id="market" (click)="selectShop()">
-        <div id="marketName">Σκλαβενίτης</div>
-        <div id="marketPrice">10,25€</div>
-    </div>
-    <div id="market">
-        <div id="marketName">Bazzar</div>
-        <div id="marketPrice">10,49€</div>
-    </div>
-    <div id="market">
-        <div id="marketName">Βασιλλόπουλος</div>
-        <div id="marketPrice">11,00€</div>
-    </div>
-    <div id="market">
-        <div id="marketName">Χαλκιαδάκης</div>
-        <div id="marketPrice">11,20€</div>
-    </div>
-    <div id="market">
-        <div id="marketName">Κρητικός</div>
-        <div id="marketPrice">11,25€</div>
+    <div id="market" (click)="selectShop(price.name,price.num)" *ngFor="let price of prices; index as i;">
+        <div id="marketName">{{price.name}}</div>
+        <div id="marketPrice">{{price.num}}€</div>
     </div>
 </div>
 <div id="adding">
@@ -87,12 +71,9 @@
         </div>
         <!--Price and Status-->
         <div id="price_status" (click)="priceShow()">
-            <div id="approx">Price Approx:<div id="price"><fa-icon [icon]="faMinus" id="line"></fa-icon></div></div>
             <div id="from">Buy from:</div>
             <div id="shops" (click)="showStores()">Any</div>
-
-
-
+            <div id="approx">Price Approx:<div id="price"><fa-icon [icon]="faMinus" id="line" *ngIf="any"></fa-icon></div></div>
             <div id="status">Status:
                 <div id="places">
                     <img src="../../../../assets/status/fridge.svg" id="fridge">

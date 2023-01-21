@@ -282,6 +282,8 @@ span {cursor:pointer; }
 }
 
 #approx{
+    top:70px;
+    position: absolute;
     display: flex;
     font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
@@ -304,7 +306,7 @@ span {cursor:pointer; }
 
 #from{
     position: absolute;
-    top: 70px;
+    top: 17px;
     font-family: 'Trebuchet MS', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -317,7 +319,7 @@ span {cursor:pointer; }
     pointer-events: none;
     box-sizing: border-box;
     position: absolute;
-    top: 68px;
+    top: 15px;
     left: 125px;
     width: 188px;
     height: 28px;
@@ -382,7 +384,7 @@ span {cursor:pointer; }
     position: absolute;
     font-size: 30px;
     left: 229px;
-    top: 20px;
+    top: 10px;
 }
 
 #marketPrice{
@@ -458,8 +460,8 @@ span {cursor:pointer; }
     position: absolute;
     width: 126px;
     height: 37px;
-    left: 25px;
-    top: 570px;
+    left: 200px;
+    top: 580px;
     background: #594545;
     border-radius: 10px;
 }

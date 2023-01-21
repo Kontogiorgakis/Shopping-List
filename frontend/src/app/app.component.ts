@@ -2,8 +2,10 @@ import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { NavigationEnd, Route, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { ProductModel } from './global/models/product/product.model';
+import { ShopModel } from './global/models/shops/shop.model';
 import { SocketsService } from './global/services/sockets/sockets.service';
 import { ProductService } from './global/services/tasks/products.service';
+import { ShopService } from './global/services/tasks/shops.service';
 
 
 @Component({
@@ -49,11 +51,20 @@ export class AppComponent {
   dentalFloss = new ProductModel();
   oral = [this.toothbrush,this.toothpaste,this.dentalFloss];
 
+
+  /*Create our Shops*/
+  sklavenitis = new ShopModel();
+  bazzar = new ShopModel();
+  vasilopoulos = new ShopModel();
+  halkiadakis = new ShopModel();
+  kritikos = new ShopModel();
+  shops = [this.sklavenitis,this.bazzar,this.vasilopoulos,this.halkiadakis,this.kritikos]
+
   //Total length
   productsLength = 0;
 
 
-  constructor(private router: Router,private productService: ProductService,private socketService: SocketsService){
+  constructor(private router: Router,private productService: ProductService,private shopService: ShopService,private socketService: SocketsService){
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
@@ -155,6 +166,103 @@ export class AppComponent {
     this.dentalFloss.minimum = 1;
     this.dentalFloss.liked = false;
 
+
+    /*Shops (oti pio kourastiko na arxikopoieis tin vasi :p)*/
+    //SKLAVENITIS
+    this.sklavenitis.name = "Sklavenitis"
+    this.sklavenitis.chickenWhole = 9.02
+    this.sklavenitis.chickenBreasts = 9.20
+    this.sklavenitis.chickenDrums = 8.14
+    this.sklavenitis.chickenLegs = 9.36
+    this.sklavenitis.pineapple = 1.85
+    this.sklavenitis.mango = 1.49
+    this.sklavenitis.avocado = 3.75
+    this.sklavenitis.cocaCola = 0.67
+    this.sklavenitis.redBull = 0.98
+    this.sklavenitis.gatorad = 0.88
+    this.sklavenitis.chips = 1.56
+    this.sklavenitis.popCorn = 0.98
+    this.sklavenitis.biscuits = 0.73
+    this.sklavenitis.tootbrush = 1.97
+    this.sklavenitis.toothpaste = 0.98
+    this.sklavenitis.dentalFloss = 1.99
+
+    //BAZZAR
+    this.bazzar.name = "Bazzar"
+    this.bazzar.chickenWhole = 7.98
+    this.bazzar.chickenBreasts = 9.40
+    this.bazzar.chickenDrums = 8.14
+    this.bazzar.chickenLegs = 8.00
+    this.bazzar.pineapple = 1.59
+    this.bazzar.mango = 3.85
+    this.bazzar.avocado = 4.80
+    this.bazzar.cocaCola = 0.64
+    this.bazzar.redBull = 0.99
+    this.bazzar.gatorad = 0.81
+    this.bazzar.chips = 1.05
+    this.bazzar.popCorn = 1.01
+    this.bazzar.biscuits = 0.74
+    this.bazzar.tootbrush = 1.75
+    this.bazzar.toothpaste = 2.17
+    this.bazzar.dentalFloss = 2.59
+
+    //VASILOPOULOS
+    this.vasilopoulos.name = "Vasilopoulos"
+    this.vasilopoulos.chickenWhole = 5.42
+    this.vasilopoulos.chickenBreasts = 11.73
+    this.vasilopoulos.chickenDrums = 12.24
+    this.vasilopoulos.chickenLegs = 7.08
+    this.vasilopoulos.pineapple = 2.21
+    this.vasilopoulos.mango = 2.50
+    this.vasilopoulos.avocado = 2.23
+    this.vasilopoulos.cocaCola = 0.70
+    this.vasilopoulos.redBull = 1.18
+    this.vasilopoulos.gatorad = 0.91
+    this.vasilopoulos.chips = 1.78
+    this.vasilopoulos.popCorn = 1.19
+    this.vasilopoulos.biscuits = 0.98
+    this.vasilopoulos.tootbrush = 1.58
+    this.vasilopoulos.toothpaste = 1.89
+    this.vasilopoulos.dentalFloss = 2.44
+
+    //HALKIADAKIS
+    this.halkiadakis.name = "Halkiadakis"
+    this.halkiadakis.chickenWhole = 7.80
+    this.halkiadakis.chickenBreasts = 12.32
+    this.halkiadakis.chickenDrums = 8.13
+    this.halkiadakis.chickenLegs = 6.40
+    this.halkiadakis.pineapple = 1.53
+    this.halkiadakis.mango = 1.93
+    this.halkiadakis.avocado = 1.93
+    this.halkiadakis.cocaCola = 0.66
+    this.halkiadakis.redBull = 1.18
+    this.halkiadakis.gatorad = 0.92
+    this.halkiadakis.chips = 1.52
+    this.halkiadakis.popCorn = 1.18
+    this.halkiadakis.biscuits = 1.25
+    this.halkiadakis.tootbrush = 1.87
+    this.halkiadakis.toothpaste = 1.88
+    this.halkiadakis.dentalFloss = 1.99
+
+    //KRITIKOS
+    this.kritikos.name = "Kritikos"
+    this.kritikos.chickenWhole = 5.70
+    this.kritikos.chickenBreasts = 12.35
+    this.kritikos.chickenDrums = 8.15
+    this.kritikos.chickenLegs = 8.05
+    this.kritikos.pineapple = 1.78
+    this.kritikos.mango = 2.27
+    this.kritikos.avocado = 1.52
+    this.kritikos.cocaCola = 0.67
+    this.kritikos.redBull = 1.19
+    this.kritikos.gatorad = 0.93
+    this.kritikos.chips = 1.56
+    this.kritikos.popCorn = 0.98
+    this.kritikos.biscuits = 1.27
+    this.kritikos.tootbrush = 2.00
+    this.kritikos.toothpaste = 1.74
+    this.kritikos.dentalFloss = 2.19
+
     console.log("MPika")
 
     //this.getAllTasks();
@@ -208,6 +316,22 @@ export class AppComponent {
       }
 
     });
+
+    /*Shops*/
+    this.shopService.getAll().subscribe((result) => {
+      console.log("LENGTH")
+      console.log(result.length)
+      if(result.length===0){
+        for(let shop of this.shops){
+          console.log(shop)
+          this.shopService.create(shop).subscribe((result) => {
+            console.log(shop)
+            this.socketService.publish("tasks_update", shop);
+          });
+        }
+      }
+    });
+
   }
 
   private getAllTasks(): void {

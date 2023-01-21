@@ -6,6 +6,8 @@ import { map } from 'rxjs/operators';
 import { TasksService } from 'src/app/global/services/tasks/tasks.service';
 import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 import { TaskModel } from 'src/app/global/models/tasks/task.model';
+import { ShopModel } from 'src/app/global/models/shops/shop.model';
+import { ShopService } from 'src/app/global/services/tasks/shops.service';
 
 
 @Component({
@@ -25,6 +27,10 @@ export class AddComponent implements OnInit {
   public status: string = '';
   product = new TaskModel();
 
+  /*Shops*/
+  public shops: ShopModel[] = [];
+  public prices:{num:number,name:string}[] =[]
+
 
   //Divs
   //name:boolean = true;
@@ -34,6 +40,7 @@ export class AddComponent implements OnInit {
 
   //Buy from
   show:boolean = false;
+  any:boolean = true;
 
   //Tab manipulation
   //Active Tab
@@ -42,7 +49,7 @@ export class AddComponent implements OnInit {
   //filter
   filter$: Observable<string> | undefined;
 
-  constructor(private router: Router, private route: ActivatedRoute, private tasksService: TasksService,private socketService: SocketsService) {}
+  constructor(private router: Router, private route: ActivatedRoute, private tasksService: TasksService, private shopsService: ShopService,private socketService: SocketsService) {}
 
   ngOnInit(): void {
     this.filter$ = this.route.queryParamMap.pipe(
@@ -119,7 +126,7 @@ export class AddComponent implements OnInit {
         document.getElementById('inputKM')?.setAttribute("style","color:rgb(182, 182, 182);");
 
         quant = document.getElementById('inputPieces') as HTMLInputElement
-        //this.product.quantity = quant.value+' pc';
+        this.product.quantity = quant.value+' pc';
         document.getElementById('sinPieces')?.setAttribute("style","pointer-events:auto;");
         document.getElementById('mionPieces')?.setAttribute("style","pointer-events:auto; line-height: 16px;");
         document.getElementById('inputPieces')?.setAttribute("style","color:rgb(82, 82, 82);");
@@ -143,7 +150,7 @@ export class AddComponent implements OnInit {
         document.getElementById('inputKM')?.setAttribute("style","color:rgb(182, 182, 182);");
 
         quant = document.getElementById('inputPieces') as HTMLInputElement
-        //this.product.quantity = quant.value+' pc';
+        this.product.quantity = quant.value+' pc';
         document.getElementById('sinPieces')?.setAttribute("style","pointer-events:auto;");
         document.getElementById('mionPieces')?.setAttribute("style","pointer-events:auto; line-height: 16px;");
         document.getElementById('inputPieces')?.setAttribute("style","color:rgb(82, 82, 82);");
@@ -169,7 +176,7 @@ export class AddComponent implements OnInit {
 
         //pointer events
         quant = document.getElementById('inputKM') as HTMLInputElement
-        //this.product.quantity = quant.value+' kg';
+        this.product.quantity = quant.value+' kg';
         console.log("OPA GANGANM "+quant.value)
         document.getElementById('sinKM')?.setAttribute("style","pointer-events:auto;");
         document.getElementById('mionKM')?.setAttribute("style","pointer-events:auto; line-height: 16px;");
@@ -238,23 +245,104 @@ export class AddComponent implements OnInit {
   }
 
   public showStores(){
-    document.getElementById('adding')?.setAttribute("style","filter: blur(1px);")
-    this.show=true;
+    this.shopsService.getAll().subscribe((result) => {
+      this.prices.length=0;
+      //Get all the database shop
+      //Frontend
+      document.getElementById('adding')?.setAttribute("style","filter: blur(1px);")
+      this.show=true;
+
+      //name and quantity
+      var pro = this.name;
+      var qua = parseFloat(this.product.quantity.substring(0, this.product.quantity.indexOf(" ")));
+
+      var names: string[] = [];
+
+      //Backend
+      for(let shop of result){
+        if(shop.name==="Sklavenitis"){
+          shop.name = "Σκλαβενίτης"
+        }else if(shop.name==="Bazzar"){
+          shop.name = "Bazzar"
+        }else if(shop.name==="Vasilopoulos"){
+          shop.name = "Βασιλόπουλος"
+        }else if(shop.name==="Halkiadakis"){
+          shop.name = "Χαλκιαδάκης"
+        }else if(shop.name==="Kritikos"){
+          shop.name = "Κρητικός"
+        }
+
+        /*Multiply with quantity and store  */
+        if(pro==="Chicken Whole"){
+          this.prices.push({num:parseFloat((shop.chickenWhole*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Chicken Breasts"){
+          this.prices.push({num:parseFloat((shop.chickenBreasts*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Chicken Drums"){
+          this.prices.push({num:parseFloat((shop.chickenDrums*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Chicken Legs"){
+          this.prices.push({num:parseFloat((shop.chickenLegs*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Pineapple"){
+          this.prices.push({num:parseFloat((shop.pineapple*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Mango"){
+          this.prices.push({num:parseFloat((shop.mango*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Avocado"){
+          this.prices.push({num:parseFloat((shop.avocado*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Coca Cola"){
+          this.prices.push({num:parseFloat((shop.cocaCola*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Red Bull"){
+          this.prices.push({num:parseFloat((shop.redBull*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Gatorade"){
+          this.prices.push({num:parseFloat((shop.gatorad*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Chips"){
+          this.prices.push({num:parseFloat((shop.chips*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Pop Corn"){
+          this.prices.push({num:parseFloat((shop.popCorn*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Biscuits"){
+          this.prices.push({num:parseFloat((shop.biscuits*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Toothbrush"){
+          this.prices.push({num:parseFloat((shop.tootbrush*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Toothpaste"){
+          this.prices.push({num:parseFloat((shop.toothpaste*qua).toFixed(2)),name:shop.name})
+        }else if(pro==="Dental Floss"){
+          this.prices.push({num:parseFloat((shop.dentalFloss*qua).toFixed(2)),name:shop.name})
+        }
+      }
+
+      this.prices.sort((a,b) => (a.num > b.num) ? 1 : ((b.num > a.num) ? -1 : 0))
+      //console.log(this.prices[0].)
+
+    });
   }
 
-  public selectShop(){
+  /*Add price and shop to db*/
+  public selectShop(name:string, price:number){
     document.getElementById('adding')?.setAttribute("style","filter: blur(0px);")
     this.show=false;
 
     //make market first
-    document.getElementById('shops')!.innerHTML="Σκλαβενίτης";
-    document.getElementById('price')!.innerHTML="10,25€";
+    document.getElementById('shops')!.innerHTML=name;
+    document.getElementById('price')!.innerHTML=price+"€";
 
+    //add to db
+    this.product.store=name;
+    this.product.price=price.toString()+"€";
+  }
+
+  public emptyness(){
+    document.getElementById('adding')?.setAttribute("style","filter: blur(0px);")
+    this.show=false;
+
+    //make market first
+    document.getElementById('shops')!.innerHTML="Any";
+    this.any = true;
+    document.getElementById('price')!.innerHTML="none";
+    this.product.store="Any";
+    this.product.price="none";
   }
 
   /*Show divs*/
   public nameShow(){
-
+    this.emptyness()
     //show name
     document.getElementById('search_bar')?.setAttribute("style","pointer-events: auto;")
     document.getElementById('namerow')?.setAttribute("style","opacity: 1;")
@@ -321,19 +409,10 @@ export class AddComponent implements OnInit {
 
   public addItem(){
     this.product.name = this.name;
-    this.product.price = this.price;
     //this.product.quantity = this.quantity
     this.product.type = "Not Purchased";
 
     console.log(this.product.quantity)
-
-
-    var pricePr = document.getElementById('price') as HTMLElement
-    if(pricePr.innerHTML[0]==='<'){
-      this.product.price = 'none';
-    }else{
-      this.product.price = pricePr.innerHTML
-    }
     console.log("prod =")
     console.log(this.product);
     //ADD THEM
