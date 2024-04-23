@@ -1,4 +1,8 @@
-# fullstack-template
+# Shopping List Application
+
+
+Innovative kitchen management app with smart interfaces for efficient inventory control and enhanced productivity
+
 
 ## Docker Variant
 
