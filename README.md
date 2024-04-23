@@ -3,42 +3,6 @@
 
 Innovative kitchen management app with smart interfaces for efficient inventory control and enhanced productivity
 
-
-## Docker Variant
-
-What you will need:
-* Docker 
-
-Tested on: 
-* Docker Engine v20.10.17
-* Docker Desktop v4.10.1.
-
-### Useful commands
-Inside *`integration`* folder you can use the following commands:
-
-> Run application (and build):
-```sh
-docker-compose up --build
-```
-
-> Run application (with full logging available):
-```sh
-docker-compose up
-```
-
-> Run application (detached mode/with no logging available):
-```sh
-docker-compose up -d
-```
-
-> Stop application:
-```sh
-docker-compose down
-```
-
-> View logs for specific project/container of the application (e.g., backend):
-```sh
-docker-compose logs -f backend
 ```
 
 ## Verbose Variant
