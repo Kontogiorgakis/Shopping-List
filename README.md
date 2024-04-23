@@ -4,7 +4,7 @@
 Innovative kitchen management app with smart interfaces for efficient inventory control and enhanced productivity
 
 
-## Verbose Variant
+## Installation
 
 What you will need:
 * NodeJS
