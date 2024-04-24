@@ -13,13 +13,16 @@ Our innovative kitchen management application, developed using Angular CLI and N
 Our application empowers users to effortlessly organize their shopping experiences by providing comprehensive insights into their household needs. It intelligently identifies products that require replenishment across different areas of the house, such as the kitchen and bathroom, while offering a curated smart list featuring real-time price updates from local vendors. Users can conveniently track purchased items and allocate them to designated spaces, such as the fridge, enhancing overall household efficiency. Moreover, the application offers an extensive library of recipes tailored to the ingredients available in the kitchen, inspiring culinary creativity and minimizing food waste. Additionally, users can stay informed about exclusive offers and monitor the status of household products, ensuring timely restocking and optimal utilization.
 
 ## Key Features
-* Smart List Creation: Generate a personalized shopping list that calculates product prices and tracks their status, including purchase and storage location.
+* **Smart List Creation**: Generate a personalized shopping list that calculates product prices and tracks their status, including purchase and storage location.
 
-* Inventory Management: Receive notifications when essential household items are running low or require replenishment, ensuring seamless supply management.
+* **Inventory Management**: Receive notifications when essential household items are running low or require replenishment, ensuring seamless supply management.
 
-* Recipe Database: Explore a diverse range of delicious recipes based on available kitchen ingredients, fostering culinary exploration and meal planning.
+* **Recipe Database**: Explore a diverse range of delicious recipes based on available kitchen ingredients, fostering culinary exploration and meal planning.
 
-* Product Insights: Stay updated on special offers and monitor the status of household products, empowering informed purchasing decisions and efficient utilization.
+* **Product Insights**: Stay updated on special offers and monitor the status of household products, empowering informed purchasing decisions and efficient utilization.
+
+* **Voice-Activated Convenience**: Seamlessly utilize voice commands for enhanced usability, catering to scenarios where hands-free interaction is preferred, such as in wet or greasy environments like the bathroom or kitchen.
+
 
 ## Screenshots
 
@@ -50,6 +53,18 @@ Our application empowers users to effortlessly organize their shopping experienc
 | ![Shlist](Screenshots/Fridge/Kitchen_Fridge_Liked_Items.png) | ![Shlist](Screenshots/Fridge/Kitchen_Fridge_Pending_Items.png) 
 |:---:|:---:|
 | Liked Items | Pending Items for fridge | 
+
+
+**Bathroom Panel**
+
+
+| ![Shlist](Screenshots/Bathroom/Bathroom_Basic.png) | ![Shlist](Screenshots/Bathroom/Bathroom_Oral_Health.png) 
+|:---:|:---:|
+| Bathroom Section | Oral Health Section | 
+
+| ![Shlist](Screenshots/Bathroom/Bathroom_Liked_Items.png) | ![Shlist](Screenshots/Bathroom/Bathroom_Pending_Items.png) 
+|:---:|:---:|
+| Liked Items | Pending Items for bathroom | 
 
 
 ## Installation
@@ -92,3 +107,7 @@ Run ng serve for a dev server. Navigate to http://localhost:4200/. The applicati
 
 
 **Do not forget**: mongod.exe (if on Windows) must be running for the Database to be used. 
+
+
+## Evaluation
+The heuristic evaluation of the application design was done in the context of the HY469 course by various users who, after our guidance, provided their conclusions.
